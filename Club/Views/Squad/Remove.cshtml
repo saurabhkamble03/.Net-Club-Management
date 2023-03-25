@@ -1,0 +1,44 @@
+﻿@model Squad
+<form method="post" asp-action="RemovePlayer">
+    <input asp-for="Id" hidden />
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Remove Player</h2>
+            <hr />
+        </div>
+
+        <div asp-validation-summary="All"></div>
+        <div class="mb-3">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" disabled class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Number"></label>
+            <input asp-for="Number" disabled class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Age"></label>
+            <input asp-for="Age" disabled class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Position"></label>
+            <input asp-for="Position" disabled class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-danger" style="width:150px">Remove Player</button>
+        <a asp-controller="Squad" asp-action="Index" class="btn btn-info">
+            Back To Team Sheet
+        </a>
+
+    </div>
+</form>
+
+@section Scripts
+{
+    @{
+        <partial name="_ValidationScriptsPartial"/>
+    }
+}
